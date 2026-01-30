@@ -1,0 +1,1 @@
+This folder contains optimal number of clusters analysis, trained K-Means model, and visualizations.

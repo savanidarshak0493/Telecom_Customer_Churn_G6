@@ -1,0 +1,1 @@
+This folder contains all Jupyter Notebooks developed for the Customer Churn Analysis project. The notebooks include code, visualisations, and documentation of the data preparation, feature engineering, and clustering analysis processes.

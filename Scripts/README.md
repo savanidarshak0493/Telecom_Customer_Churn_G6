@@ -1,0 +1,1 @@
+This folder contains all Python scripts developed for the Customer Churn Analysis project. The scripts are used to automate and reproduce data preparation, feature engineering, and clustering processes.

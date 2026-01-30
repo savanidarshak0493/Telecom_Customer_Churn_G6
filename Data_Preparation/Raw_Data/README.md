@@ -1,0 +1,1 @@
+This folder contains the original dataset provided for the Customer Churn Analysis project. The data is unprocessed and serves as the source for all preprocessing, feature engineering, and analysis tasks.
