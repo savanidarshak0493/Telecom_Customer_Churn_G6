@@ -1,10 +1,13 @@
-# Telecom Customer Churn Analysis - Stage 2 Deliverables
+# Telecom Customer Churn Analysis (Group 6)
 
-## Description
-This repository contains Stage 2 deliverables for the ACS WILDA Customer Churn Analysis project. 
+This project focuses on analysing telecom customer churn using data engineering and machine learning techniques.
 
-## Structure
-- `Data_Preparation/` : Contains preprocessed dataset, training/testing sets, and scaling documentation.
-- `Clustering_Analysis/` : Contains K-Means clustering model, cluster visualizations, and elbow method output.
-- `Scripts/` : Contains all Python scripts used for data preparation and clustering.
-- `Video/` : Video demonstration of Stage 2 deliverables.
+## Project Structure
+- Data_Preparation: Raw and processed datasets
+- Scripts: Python scripts for data cleaning and transformation
+- Notebooks: Exploratory analysis and experiments
+- Clustering_Analysis: Customer segmentation using clustering
+- Documentation: Project reports and explanations
+
+## Workflow
+Raw Data → Data Preparation → Processed Data → Analysis → Clustering
