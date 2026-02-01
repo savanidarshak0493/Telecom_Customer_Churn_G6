@@ -1,45 +1,110 @@
-Clustering Analysis Folder created# Clustering Analysis – Stage 2 (2-2)
+# Clustering Analysis – Stage 2 (2-2)
 
-## Objective
-The objective of this stage is to perform clustering analysis to identify distinct customer segments based on key behavioural and service-related features. This analysis helps in understanding customer patterns and supports future churn prediction and retention strategies.
+## Project: Telecom Customer Churn Analysis
 
-## Input Data
-The clustering analysis uses the processed datasets generated during Stage 2 – Data Preparation.
+## 1. Overview
+This stage focuses on performing **clustering analysis** to identify distinct customer segments within the telecom dataset.  
+Clustering is an **unsupervised machine learning technique** that groups customers based on similarity in their usage and service-related features.
 
-Files used:
-- X_train.csv
-- X_test.csv
+All clustering deliverables are stored in the **Clustering_Analysis** folder as required by the assessment instructions.
 
-Only feature datasets were used because clustering is an unsupervised learning technique. Churn labels were not used for training the clustering model.
+---
 
-## Methodology
+## 2. Clustering Analysis Deliverables
 
-### Elbow Method
-The Elbow Method was applied to determine the optimal number of clusters by analysing the Within-Cluster Sum of Squares (WCSS). The point where the reduction in WCSS begins to slow down was selected as the optimal number of clusters.
+The following files were created as part of Stage 2 (2-2):
 
-### K-Means Clustering
-A K-Means clustering model was trained using the optimal number of clusters identified through the Elbow Method. This model groups customers based on similarity in their features.
+- **01_elbow_method.png** – Elbow Method graph used to determine the optimal number of clusters  
+- **02_kmeans_model.pkl** – Trained K-Means clustering model  
+- **03_cluster_visualization.png** – Visual representation of customer clusters  
+- **04_clustered_dataset.csv** – Dataset containing assigned cluster labels  
 
-### Cluster Visualisation
-Principal Component Analysis (PCA) was applied to reduce the dimensionality of the dataset and visualise customer clusters in two dimensions for better interpretation.
+---
 
-## Output Files
-The following outputs were generated as part of the clustering analysis:
+## 3. Optimal Number of Clusters
 
-- 01_elbow_method.png  
-  Visualisation used to identify the optimal number of clusters.
+### 3.1 What is the Optimal Number of Clusters?
+The **optimal number of clusters** refers to the value of *K* that best balances:
+- Minimising variation within each cluster
+- Avoiding unnecessary complexity from too many clusters
 
-- 02_kmeans_model.pkl  
-  Saved trained K-Means clustering model.
+Selecting the correct number of clusters ensures the results are **meaningful, interpretable, and useful** for business analysis.
 
-- 03_cluster_visualization.png  
-  PCA-based visual representation of customer clusters.
+---
 
-- 04_clustered_dataset.csv  
-  Dataset containing cluster labels assigned to each customer.
+### 3.2 Elbow Method
+The **Elbow Method** was used to determine the optimal number of clusters.
 
-## Business Insight
-The resulting clusters represent distinct customer segments with different usage and behavioural patterns. These insights can be used to design targeted customer retention strategies and support churn prediction in later stages of the project.
+This method works by:
+1. Training K-Means models with different values of *K*
+2. Calculating the **Within-Cluster Sum of Squares (WCSS)** for each value
+3. Plotting WCSS against the number of clusters
 
-## Conclusion
-This clustering analysis completes Stage 2 (2-2) deliverables by successfully identifying customer segments and preparing structured outputs for further modelling and analysis.
+The optimal number of clusters is identified at the point where the curve begins to flatten, forming an “elbow”.
+
+**Figure 1 below shows the Elbow Method result used in this analysis.**
+
+![Elbow Method](01_elbow_method.png)
+
+Based on the graph, the elbow point indicates the most suitable number of clusters for the dataset.
+
+---
+
+## 4. K-Means Clustering Model
+
+Using the optimal number of clusters identified from the Elbow Method, a **K-Means clustering model** was trained on the processed telecom dataset.
+
+Key points:
+- The model was trained using scaled numerical features
+- Churn labels were not used, as clustering is unsupervised
+
+The trained model was saved as a binary file:
+
+- **02_kmeans_model.pkl**
+
+This file stores the trained model and is not readable in a text editor, which is expected behaviour for machine learning models.
+
+---
+
+## 5. Cluster Visualisation and Labelling
+
+### 5.1 Cluster Visualisation
+To visually interpret the clustering results, **Principal Component Analysis (PCA)** was applied to reduce the dataset to two dimensions.
+
+The resulting visualisation shows how customers are grouped into different clusters based on similarity.
+
+**Figure 2 below displays the cluster visualisation.**
+
+![Cluster Visualisation](03_cluster_visualization.png)
+
+Each colour represents a different customer cluster.
+
+---
+
+### 5.2 Clustered Dataset
+The final output of the clustering process is the clustered dataset:
+
+- **04_clustered_dataset.csv**
+
+This file contains the processed dataset with an additional column representing the **cluster label** assigned to each customer.
+
+---
+
+## 6. Business Insights
+The clustering results indicate that customers can be grouped into **distinct segments** with different behaviour and usage patterns.
+
+These segments can be used to:
+- Identify high-risk churn groups
+- Design targeted retention strategies
+- Support personalised marketing and service offerings
+
+---
+
+## 7. Conclusion
+This clustering analysis successfully completes **Stage 2 (2-2)** by:
+- Identifying the optimal number of clusters using the Elbow Method
+- Training and saving a K-Means clustering model
+- Visualising and labelling customer clusters
+- Producing a clustered dataset for future analysis
+
+All deliverables have been implemented and documented according to ACS assessment guidelines.
