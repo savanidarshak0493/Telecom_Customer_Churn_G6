@@ -100,11 +100,55 @@ These segments can be used to:
 
 ---
 
-## 7. Conclusion
-This clustering analysis successfully completes **Stage 2 (2-2)** by:
-- Identifying the optimal number of clusters using the Elbow Method
-- Training and saving a K-Means clustering model
-- Visualising and labelling customer clusters
-- Producing a clustered dataset for future analysis
+## 7. Methodological Considerations and Technical Rationale
 
-All deliverables have been implemented and documented according to ACS assessment guidelines.
+### 7.1 Categorical Encoding Rationale
+Nominal categorical variables such as `InternetService` and `Contract` do not have an inherent ordinal relationship.  
+Using Label Encoding for these variables can introduce artificial numerical ordering (for example, Month-to-month < One year < Two year), which may bias distance-based algorithms such as K-Means.
+
+To prevent this issue, **One-Hot Encoding** was applied to all nominal categorical variables used in clustering.  
+This ensures that categorical features contribute equally to Euclidean distance calculations without imposing a false numerical hierarchy.
+
+---
+
+### 7.2 Feature Scaling Strategy
+K-Means clustering relies on **Euclidean distance**, making feature scaling a critical preprocessing step.  
+All continuous numerical features used for clustering were standardised using **StandardScaler** to ensure that no single feature with a larger magnitude disproportionately influenced the clustering process.
+
+This approach improves centroid stability and ensures proportional contribution of all numerical features during cluster formation.
+
+---
+
+### 7.3 Exploratory Data Analysis Prior to Clustering
+Prior to clustering, basic **exploratory data analysis (EDA)** was conducted to assess feature distributions, identify potential outliers, and check feature correlations.
+
+- Feature distributions were reviewed using summary statistics and visual inspection.
+- Boxplots were examined to identify extreme outliers that could distort centroid placement.
+- Correlation analysis was performed to confirm that no highly redundant features dominated the clustering outcome.
+
+No extreme outliers requiring removal were observed, and the selected features were deemed suitable for clustering.
+
+---
+
+### 7.4 Churn Class Balance Consideration
+Although clustering is an **unsupervised learning technique** and does not directly use churn labels, class imbalance was reviewed during data preparation. The churn variable was found to be imbalanced, which is typical in telecom datasets.
+
+Since K-Means clustering does not rely on target labels, resampling or class weighting techniques were not applied at this stage.  
+Class imbalance will be explicitly addressed during subsequent **supervised churn prediction modelling** stages.
+
+---
+
+### 7.5 Key Technical Decisions Summary
+- **One-Hot Encoding** was applied to nominal categorical variables to avoid artificial ordinal relationships.
+- **StandardScaler** was used for feature scaling to ensure fair distance-based clustering.
+- **Exploratory checks for distributions, outliers, and correlations** were conducted prior to modelling.
+- **Churn class imbalance** was acknowledged and deferred to supervised modelling stages.
+
+These decisions were made to ensure methodological correctness, robustness, and interpretability of the clustering analysis.
+
+---
+
+## 8. Conclusion
+To conclude, the clustering analysis successfully identified distinct customer segments and provides meaningful insights that can support targeted retention strategies and future churn prediction.  
+This completes **Stage 2 of the project**, and all required clustering analysis deliverables have been implemented, documented, and uploaded according to the assessment requirements.  
+Thank you.
