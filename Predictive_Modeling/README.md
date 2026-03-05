@@ -1,20 +1,46 @@
 # Predictive Modeling – Customer Churn Prediction (ANN)
 
-This folder contains the Artificial Neural Network (ANN) model used to predict telecom customer churn.
+This module implements an Artificial Neural Network (ANN) to predict telecom customer churn.
 
-## Files Included
+## Model Architecture
 
-**01_ann_churn_prediction.ipynb**  
-Jupyter notebook containing the complete ANN model implementation including data loading, model training, evaluation, and visualization.
+The ANN model contains:
 
-**churn_ann_model.h5**  
-Saved trained ANN model that can be reused for future predictions.
+- Input Layer (Customer features)
+- Hidden Layer (ReLU activation)
+- Hidden Layer (ReLU activation)
+- Output Layer (Sigmoid activation)
 
-**confusion_matrix.png**  
-Confusion matrix visualization showing the performance of the churn prediction model.
+The model predicts whether a customer is likely to churn.
+
+---
 
 ## Model Performance
 
-Accuracy: ~78%
+Accuracy: **~78%**
 
-The ANN model predicts whether a telecom customer is likely to churn based on customer behaviour and service features.
+---
+
+## Confusion Matrix
+
+![Confusion Matrix](confusion_matrix.png)
+
+---
+
+## Files in this Folder
+
+01_ann_churn_prediction.ipynb  
+Notebook containing ANN model training and evaluation.
+
+churn_ann_model.h5  
+Saved trained ANN model.
+
+confusion_matrix.png  
+Visualization showing model prediction results.
+
+---
+
+## Project
+
+Telecom Customer Churn Analysis  
+Machine Learning & Data Analytics Project
