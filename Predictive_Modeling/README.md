@@ -15,7 +15,7 @@ The Artificial Neural Network model contains:
 - Hidden Layer 2 with ReLU activation
 - Output Layer with Sigmoid activation for binary classification
 
-The model uses the **Adam optimizer** and **binary cross-entropy loss function**.
+The model uses the Adam optimizer and binary cross-entropy loss function.
 
 ---
 
@@ -23,31 +23,39 @@ The model uses the **Adam optimizer** and **binary cross-entropy loss function**
 
 The trained ANN model achieved an approximate accuracy of:
 
-**Accuracy: ~78%**
+Accuracy: ~78%
 
 ---
 
 ## Model Evaluation
 
-### Confusion Matrix
+### Accuracy Graph
+![Accuracy](accuracy_graph.png)
 
+### Loss Graph
+![Loss](loss_graph.png)
+
+### Confusion Matrix
 ![Confusion Matrix](confusion_matrix.png)
 
 ---
 
 ## Files in this Folder
 
-**01_ann_churn_prediction.ipynb**
-
+01_ann_churn_prediction.ipynb  
 Jupyter Notebook containing the complete ANN implementation including model training, evaluation, and visualizations.
 
-**churn_ann_model.h5**
-
+churn_ann_model.h5  
 Saved trained ANN model that can be reused for predictions.
 
-**confusion_matrix.png**
-
+confusion_matrix.png  
 Visualization showing the performance of the churn prediction model.
+
+accuracy_graph.png  
+Graph showing training and validation accuracy during model training.
+
+loss_graph.png  
+Graph showing training and validation loss during model training.
 
 ---
 
